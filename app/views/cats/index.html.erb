@@ -1,6 +1,11 @@
 <h1> YO </h1>
 <% @cats.each do |cat| %>
-<p> Name: <%= cat.name%> </p>
+<p> Name: <%= cat.name%></p>
 <p> Age: <%= cat.age%> </p>
+<p> Id: <%= cat.id%> </p>
 <img src="<%= cat.image_url %>">
+<br />
+<form action="http://localhost:3000/cats/<%=cat.id%>">
+    <input type="submit" value="View Cat" />
+</form>
 <% end %>

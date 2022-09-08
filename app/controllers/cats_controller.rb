@@ -3,4 +3,9 @@ class CatsController < ApplicationController
     @cats = Cat.all
     render 'cats/index'
   end
+
+  def show
+    @cat = Cat.find_by(id: params[:id])
+    render 'cats/show'
+  end
 end
