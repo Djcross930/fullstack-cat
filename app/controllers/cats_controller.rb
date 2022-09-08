@@ -21,4 +21,19 @@ class CatsController < ApplicationController
     cat.save
     redirect_to "/cats/" + cat.id.to_s
   end
+
+  def edit
+    @cat = Cat.find_by(id: params[:id])
+    render 'cats/edit'
+  end
+
+  def update
+    cat = Cat.find_by(id: params[:id])
+    cat.name = params[:name]
+    cat.image_url = params[:image_url]
+    cat.age = params[:age]
+    cat.save
+
+    redirect_to "/cats"
+  end
 end
