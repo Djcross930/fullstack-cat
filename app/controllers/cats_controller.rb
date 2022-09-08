@@ -19,6 +19,6 @@ class CatsController < ApplicationController
     cat.age = params[:age]
     cat.image_url = params[:image_url]
     cat.save
-    redirect_to "/cats"
+    redirect_to "/cats/" + cat.id.to_s
   end
 end
